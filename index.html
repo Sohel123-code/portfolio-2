@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Khaja Eshaq | Portfolio</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style type="text/tailwindcss">
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+
+        /* Custom Colors */
+        :root {
+            --background: 240 10% 99%;
+            --foreground: 222 47% 11%;
+            --card: 0 0% 100%;
+            --card-foreground: 222 47% 11%;
+            --primary: 188 84% 48%;
+            --primary-foreground: 0 0% 100%;
+            --secondary: 35 92% 55%;
+            --secondary-foreground: 222 47% 11%;
+        }
+        .dark {
+            --background: 222 47% 11%;
+            --foreground: 215 20% 65%;
+            --card: 222 47% 14%;
+            --card-foreground: 215 20% 65%;
+            --primary: 188 78% 58%;
+            --primary-foreground: 222 47% 11%;
+            --secondary: 35 85% 65%;
+            --secondary-foreground: 222 47% 11%;
+        }
+
+        .bg-background { background-color: hsl(var(--background)); }
+        .text-foreground { color: hsl(var(--foreground)); }
+        .bg-card { background-color: hsl(var(--card)); }
+        .text-card-foreground { color: hsl(var(--card-foreground)); }
+        .bg-primary { background-color: hsl(var(--primary)); }
+        .text-primary { color: hsl(var(--primary)); }
+        .text-primary-foreground { color: hsl(var(--primary-foreground)); }
+        .bg-secondary { background-color: hsl(var(--secondary)); }
+        .text-secondary { color: hsl(var(--secondary)); }
+        .text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+
+        /* Scroll reveal animation */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        .nav-link::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: hsl(var(--primary));
+            transition: width .3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .hover-shadow:hover { box-shadow: 0 10px 20px rgba(0,0,0,0.2); transform: translateY(-5px); transition: all 0.3s ease-in-out; }
+    </style>
+</head>
+
+<body class="bg-background text-foreground transition-colors duration-500">
+
+    <!-- Header & Navigation -->
+    <header id="header"
+        class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm transition-shadow duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-xl font-bold tracking-tight">
+                <span class="text-primary">Mohamed</span><span class="text-secondary">KhajaEshaq</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-foreground font-medium hover:text-primary">Home</a>
+                <a href="#about" class="nav-link text-foreground font-medium hover:text-primary">About</a>
+                <a href="#projects" class="nav-link text-foreground font-medium hover:text-primary">Projects</a>
+                <a href="#connect" class="nav-link text-foreground font-medium hover:text-primary">Connect</a>
+                <a href="#contact" class="nav-link text-foreground font-medium hover:text-primary">Contact Info</a>
+            </nav>
+            <div class="flex items-center">
+                <button id="theme-toggle"
+                    class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+                    <svg id="theme-icon-light" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="theme-icon-dark" class="h-6 w-6 text-primary hidden" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+                <button id="mobile-menu-button" class="md:hidden ml-4 p-2">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 text-center text-foreground font-medium">Home</a>
+            <a href="#about" class="block py-2 text-center text-foreground font-medium">About</a>
+            <a href="#projects" class="block py-2 text-center text-foreground font-medium">Projects</a>
+            <a href="#connect" class="block py-2 text-center text-foreground font-medium">Connect</a>
+            <a href="#contact" class="block py-2 text-center text-foreground font-medium">Contact Info</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 pt-24">
+
+        <!-- Home Section -->
+        <section id="home" class="min-h-[calc(100vh-6rem)] flex items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left reveal">
+                    <span class="text-lg font-semibold text-primary">Hello, I'm</span>
+                    <h1 class="text-5xl md:text-7xl font-extrabold my-4 leading-tight">
+                        Mohamed Khaja Eshaq
+                    </h1>
+                    <p class="text-xl text-foreground/80">
+                        A passionate Web Developer & CSE Student crafting digital experiences that are intuitive,
+                        beautiful, and accessible.
+                    </p>
+                    <div class="mt-8 flex justify-center md:justify-start space-x-4">
+                        <a href="#contact"
+                            class="px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 hover-shadow">
+                            Get in Touch
+                        </a>
+                        <a href="#projects"
+                            class="px-6 py-3 bg-secondary text-secondary-foreground font-semibold rounded-lg shadow-lg hover:bg-secondary/90 hover-shadow">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center reveal" style="transition-delay: 200ms;">
+                    <div class="relative w-72 h-72 md:w-96 md:h-96">
+                        <img src="profile.jpg" alt="Mohamed Khaja Eshaq"
+                            class="relative w-full h-full object-cover rounded-full border-4 border-primary shadow-2xl hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">About Me</h2>
+                <p class="text-lg text-foreground/70 mt-2">A little bit about my journey and skills.</p>
+                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2 reveal">
+                    <img src="sohel.jpg" alt="About Mohamed Khaja Eshaq"
+                        class="rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-secondary">
+                </div>
+                <div class="md:col-span-3 space-y-6 reveal" style="transition-delay: 200ms;">
+                    <p class="text-lg text-foreground/80 leading-relaxed">
+                        Hi, I'm Mohamed Khaja Eshaq, a dedicated Computer Science and Engineering student at Vignan
+                        Institute of Technology, Visakhapatnam. I have maintained a CGPA of 9.03 in my first semester
+                        and 9.8 till now.
+                    </p>
+                    <p class="text-lg text-foreground/80 leading-relaxed">
+                        I'm deeply interested in web development, programming, and problem-solving. I enjoy transforming
+                        ideas into interactive digital experiences.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">My Projects</h2>
+                <p class="text-lg text-foreground/70 mt-2">A selection of my recent work.</p>
+                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project Card 1 -->
+                <div
+                    class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="tic tac.avif" alt="Tic Tac Toe Game" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">🕹 TIC-TAC-TOE</h3>
+                    <p class="text-card-foreground/70 my-2">A classic Tic-Tac-Toe game built with HTML, CSS, and
+                        JavaScript.</p>
+                    <a href="https://sohel123-code.github.io/tic-tac-toe2/" target="_blank"
+                        class="mt-2 inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-transform transform hover:scale-105">View
+                        Project</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal"
+                    style="transition-delay: 150ms;">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="zomato.png" alt="Zomato Clone" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">🍔 ZOMATO CLONE</h3>
+                    <p class="text-card-foreground/70 my-2">Front-end clone of Zomato food ordering website.</p>
+                    <a href="https://sohel123-code.github.io/zomatoclone/" target="_blank"
+                        class="mt-2 inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-transform transform hover:scale-105">View
+                        Project</a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal"
+                    style="transition-delay: 300ms;">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="tourist.jpg" alt="Tourist Places Website" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">🌍 TOURIST PLACES WEBSITE</h3>
+                    <p class="text-card-foreground/70 my-2">A website showcasing tourist destinations with beautiful UI.
+                    </p>
+                    <a href="https://sohel123-code.github.io/TOURIST3-PLACES/" target="_blank"
+                        class="mt-2 inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-transform transform hover:scale-105">View
+                        Project</a>
+                </div>
+
+                <!-- Project Card 4 - Cosmo Explorer -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal"
+                    style="transition-delay: 450ms;">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                             alt="Cosmo Explorer" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">🚀 COSMO EXPLORER</h3>
+                    <p class="text-card-foreground/70 my-2">An interactive space exploration website showcasing planets, stars, and galaxies with stunning visuals.</p>
+                    <a href="https://sohel123-code.github.io/COSMO-EXPLORER--2/" target="_blank"
+                        class="mt-2 inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-transform transform hover:scale-105">View
+                        Project</a>
+                </div>
+
+                <!-- Project Card 5 - Chalo Jharkhand -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal"
+                    style="transition-delay: 600ms;">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4">
+                        <img src="tourist1.jpg" 
+                             alt="Chalo Jharkhand" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">🏞️ CHALO JHARKHAND</h3>
+                    <p class="text-card-foreground/70 my-2">A tourism website highlighting the beautiful landscapes, culture, and heritage of Jharkhand state.</p>
+                    <a href="https://sultanam265-stack.github.io/CHALO-JHARKHAND/" target="_blank"
+                        class="mt-2 inline-block px-4 py-2 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-transform transform hover:scale-105">View
+                        Project</a>
+                </div>
+
+                <!-- Project Card 6 - Placeholder for future projects -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal"
+                    style="transition-delay: 750ms;">
+                    <div class="w-full h-48 overflow-hidden rounded-lg mb-4 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                        <span class="text-4xl">💡</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-card-foreground">✨ More Coming Soon</h3>
+                    <p class="text-card-foreground/70 my-2">Working on exciting new projects. Stay tuned for more amazing creations!</p>
+                    <button class="mt-2 inline-block px-4 py-2 bg-gray-300 text-gray-600 rounded-lg font-semibold cursor-not-allowed">
+                        Coming Soon
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="connect" class="py-24">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">Connect with Me</h2>
+                <p class="text-lg text-foreground/70 mt-2">Find me on these platforms.</p>
+                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-8 reveal">
+                <!-- LinkedIn -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                    <img src="linkdn.png" alt="LinkedIn Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-card-foreground">💼 LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/md-khaja-eshaq-8862b532a" target="_blank"
+                        class="mt-4 inline-block px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-transform transform hover:scale-105">
+                        Visit Profile
+                    </a>
+                </div>
+                <!-- GitHub -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                    <img src="github.png" alt="GitHub Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-card-foreground">💻 GitHub</h3>
+                    <a href="https://github.com/Sohel123-code" target="_blank"
+                        class="mt-4 inline-block px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-transform transform hover:scale-105">
+                        Visit Profile
+                    </a>
+                </div>
+                <!-- HackerRank -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                    <img src="hk logo.jpg" alt="HackerRank Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-card-foreground">💡 HackerRank</h3>
+                    <a href="https://www.hackerrank.com/profile/mdsohel46940" target="_blank"
+                        class="mt-4 inline-block px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-transform transform hover:scale-105">
+                        Visit Profile
+                    </a>
+                </div>
+                <!-- CodeChef -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                    <img src="codecef.jpg" alt="CodeChef Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-card-foreground">👨‍💻 CodeChef</h3>
+                    <a href="https://www.codechef.com/users/mdsohel123" target="_blank"
+                        class="mt-4 inline-block px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-transform transform hover:scale-105">
+                        Visit Profile
+                    </a>
+                </div>
+                <!-- LeetCode -->
+                <div class="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
+                    <img src="leetcode.png" alt="LeetCode Logo" class="w-16 h-16 mx-auto mb-4">
+                    <h3 class="text-xl font-semibold text-card-foreground">🖥 LeetCode</h3>
+                    <a href="https://leetcode.com/u/mdsohel786/" target="_blank"
+                        class="mt-4 inline-block px-6 py-2 bg-primary text-primary-foreground font-semibold rounded-lg shadow-lg hover:bg-primary/90 transition-transform transform hover:scale-105">
+                        Visit Profile
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Info Section -->
+        <section id="contact" class="py-24">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold">Contact Info</h2>
+                <p class="text-lg text-foreground/70 mt-2">Reach out to me directly.</p>
+                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+            </div>
+            <div class="max-w-xl mx-auto grid gap-6 reveal">
+                <!-- Email -->
+                <div
+                    class="flex items-center gap-4 bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="gmail.png" alt="Gmail" class="w-8 h-8">
+                    <a href="mailto:mdsohel46940@gmail.com"
+                        class="text-primary font-medium hover:underline break-all">mdsohel46940@gmail.com</a>
+                </div>
+                <!-- Phone -->
+                <div
+                    class="flex items-center gap-4 bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                    <img src="call.png" alt="Phone" class="w-8 h-8">
+                    <a href="tel:6309145886" class="text-primary font-medium hover:underline break-all">+91
+                        6309145886</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scripts -->
+    <script>
+        // Dark/Light Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const iconLight = document.getElementById('theme-icon-light');
+        const iconDark = document.getElementById('theme-icon-dark');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            iconLight.classList.toggle('hidden');
+            iconDark.classList.toggle('hidden');
+        });
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('active'); } });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+
+</html>
