@@ -12,7 +12,7 @@ function Home() {
           </p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Hi, I&apos;m <span className="text-primary">Sohel</span> —
+            Hi, I&apos;m <span className="text-primary">Mohamed Khaja Eshaq</span> —
             <br />
             building <span className="text-secondary">real-world</span> web apps.
           </h1>
@@ -63,29 +63,10 @@ function Home() {
               <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto mb-4">
                 <img
                   src="/s1.jpeg"
-                  alt="Sohel"
+                  alt="Mohamed Khaja Eshaq"
                   className="w-full h-full object-cover rounded-3xl border-4 border-primary/70 shadow-xl"
                 />
                 <span className="absolute -bottom-2 -right-2 text-3xl">🚀</span>
-              </div>
-              <div className="text-center space-y-2">
-                <p className="text-sm font-semibold text-primary/80">
-                  B.Tech CSE • Vignan Institute of Technology
-                </p>
-                <p className="text-xs text-foreground/60">
-                  Focused on frontend development, DSA, and real-world web applications.
-                </p>
-                <div className="flex justify-center gap-2 pt-1 flex-wrap">
-                  <span className="px-2.5 py-1 rounded-full text-[11px] bg-primary/10 text-primary font-medium">
-                    C / Java / JavaScript
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] bg-secondary/10 text-secondary font-medium">
-                    React
-                  </span>
-                  <span className="px-2.5 py-1 rounded-full text-[11px] bg-foreground/5 text-foreground/90 font-medium">
-                    Git &amp; GitHub
-                  </span>
-                </div>
               </div>
             </div>
           </div>
