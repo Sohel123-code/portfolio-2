@@ -7,12 +7,12 @@ function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-[3fr,2fr] gap-10 lg:gap-16 items-center w-full">
         {/* Left: text & actions */}
         <div className="space-y-6 reveal">
-          <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-[0.18em]">
+          <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold uppercase tracking-[0.18em]">
             CSE Student &amp; Web Developer
           </p>
 
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight">
-            Hi, I&apos;m <span className="text-primary">Mohamed Khaja Eshaq</span> —
+            Hi, I&apos;m <span className="text-primary">Md Khaja Eshaq</span> —
             <br />
             building <span className="text-secondary">real-world</span> web apps.
           </h1>
@@ -58,16 +58,13 @@ function Home() {
         {/* Right: profile card */}
         <div className="reveal" style={{ transitionDelay: '200ms' }}>
           <div className="relative max-w-xs mx-auto">
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-tr from-primary/60 via-secondary/60 to-primary/10 blur-xl opacity-60" />
-            <div className="relative bg-card rounded-3xl p-4 shadow-2xl border border-primary/20">
-              <div className="relative w-44 h-44 md:w-56 md:h-56 mx-auto mb-4">
-                <img
-                  src="/s1.jpeg"
-                  alt="Mohamed Khaja Eshaq"
-                  className="w-full h-full object-cover rounded-3xl border-4 border-primary/70 shadow-xl"
-                />
-                <span className="absolute -bottom-2 -right-2 text-3xl">🚀</span>
-              </div>
+            <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto mb-4 group">
+              <img
+                src="/s1.jpeg"
+                alt="Sohel"
+                className="w-full h-full object-cover rounded-full border-4 border-primary/70 shadow-xl transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-2xl"
+              />
+              <span className="absolute bottom-4 right-4 text-4xl transition-transform duration-500 group-hover:rotate-12">🚀</span>
             </div>
           </div>
         </div>
