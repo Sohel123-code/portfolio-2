@@ -1,4 +1,5 @@
 import React from 'react';
+import aboutImg from '../assets/sohel.jpg';
 
 const sections = [
   {
@@ -62,7 +63,7 @@ function About() {
         <div className="space-y-6 reveal">
           <div className="rounded-3xl overflow-hidden shadow-2xl border border-secondary/40">
             <img
-              src="/sohel.jpg"
+              src={aboutImg}
               alt="Sohel"
               className="w-full h-full object-cover"
             />

@@ -1,4 +1,6 @@
 import React from 'react';
+import gmailImg from '../assets/gmail.png';
+import callImg from '../assets/call.png';
 
 function Contact() {
   return (
@@ -11,7 +13,7 @@ function Contact() {
       <div className="max-w-xl mx-auto grid gap-6 reveal">
         {/* Email */}
         <div className="flex items-center gap-4 bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="/gmail.png" alt="Gmail" className="w-8 h-8" />
+          <img src={gmailImg} alt="Gmail" className="w-8 h-8" />
           <a
             href="mailto:mdsohel46940@gmail.com"
             className="text-primary font-medium hover:underline break-all"
@@ -21,7 +23,7 @@ function Contact() {
         </div>
         {/* Phone */}
         <div className="flex items-center gap-4 bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-          <img src="/call.png" alt="Phone" className="w-8 h-8" />
+          <img src={callImg} alt="Phone" className="w-8 h-8" />
           <a href="tel:6309145886" className="text-primary font-medium hover:underline break-all">
             +91 6309145886
           </a>

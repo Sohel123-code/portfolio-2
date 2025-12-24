@@ -1,4 +1,9 @@
 import React from 'react';
+import ticTacImg from '../assets/tic tac.avif';
+import zomatoImg from '../assets/zomato.png';
+import touristImg from '../assets/tourist.jpg';
+import tourist1Img from '../assets/tourist1.jpg';
+import bloodImg from '../assets/blood.png';
 
 function Projects() {
   return (
@@ -12,7 +17,7 @@ function Projects() {
         {/* Project Card 1 */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 reveal">
           <div className="w-full h-48 overflow-hidden rounded-lg mb-4">
-            <img src="/tic tac.avif" alt="Tic Tac Toe Game" className="w-full h-full object-cover" />
+            <img src={ticTacImg} alt="Tic Tac Toe Game" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-card-foreground">🕹 TIC-TAC-TOE</h3>
           <p className="text-card-foreground/70 my-2">
@@ -34,7 +39,7 @@ function Projects() {
           style={{ transitionDelay: '150ms' }}
         >
           <div className="w-full h-48 overflow-hidden rounded-lg mb-4">
-            <img src="/zomato.png" alt="Zomato Clone" className="w-full h-full object-cover" />
+            <img src={zomatoImg} alt="Zomato Clone" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-card-foreground">🍔 ZOMATO CLONE</h3>
           <p className="text-card-foreground/70 my-2">Front-end clone of Zomato food ordering website.</p>
@@ -54,7 +59,7 @@ function Projects() {
           style={{ transitionDelay: '300ms' }}
         >
           <div className="w-full h-48 overflow-hidden rounded-lg mb-4">
-            <img src="/tourist.jpg" alt="Tourist Places Website" className="w-full h-full object-cover" />
+            <img src={touristImg} alt="Tourist Places Website" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-card-foreground">🌍 TOURIST PLACES WEBSITE</h3>
           <p className="text-card-foreground/70 my-2">
@@ -102,7 +107,7 @@ function Projects() {
           style={{ transitionDelay: '600ms' }}
         >
           <div className="w-full h-48 overflow-hidden rounded-lg mb-4">
-            <img src="/tourist1.jpg" alt="Chalo Jharkhand" className="w-full h-full object-cover" />
+            <img src={tourist1Img} alt="Chalo Jharkhand" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-card-foreground">🏞️ CHALO JHARKHAND</h3>
           <p className="text-card-foreground/70 my-2">
@@ -124,7 +129,7 @@ function Projects() {
           style={{ transitionDelay: '750ms' }}
         >
           <div className="w-full h-48 overflow-hidden rounded-lg mb-4">
-            <img src="/blood.png" alt="Blood Connect" className="w-full h-full object-cover" />
+            <img src={bloodImg} alt="Blood Connect" className="w-full h-full object-cover" />
           </div>
           <h3 className="text-2xl font-bold text-card-foreground">🩸 BLOOD CONNECT</h3>
           <p className="text-card-foreground/70 my-2">

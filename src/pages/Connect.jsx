@@ -1,4 +1,9 @@
 import React from 'react';
+import linkedinImg from '../assets/linkdn.png';
+import githubImg from '../assets/github.png';
+import hackerRankImg from '../assets/hk logo.jpg';
+import codechefImg from '../assets/codecef.jpg';
+import leetcodeImg from '../assets/leetcode.png';
 
 function Connect() {
   return (
@@ -11,7 +16,7 @@ function Connect() {
       <div className="max-w-4xl mx-auto grid md:grid-cols-2 lg:grid-cols-5 gap-8 reveal">
         {/* LinkedIn */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-          <img src="/linkdn.png" alt="LinkedIn Logo" className="w-16 h-16 mx-auto mb-4" />
+          <img src={linkedinImg} alt="LinkedIn Logo" className="w-16 h-16 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-card-foreground">💼 LinkedIn</h3>
           <a
             href="https://www.linkedin.com/in/md-khaja-eshaq-8862b532a"
@@ -25,7 +30,7 @@ function Connect() {
 
         {/* GitHub */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-          <img src="/github.png" alt="GitHub Logo" className="w-16 h-16 mx-auto mb-4" />
+          <img src={githubImg} alt="GitHub Logo" className="w-16 h-16 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-card-foreground">💻 GitHub</h3>
           <a
             href="https://github.com/Sohel123-code"
@@ -39,7 +44,7 @@ function Connect() {
 
         {/* HackerRank */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-          <img src="/hk logo.jpg" alt="HackerRank Logo" className="w-16 h-16 mx-auto mb-4" />
+          <img src={hackerRankImg} alt="HackerRank Logo" className="w-16 h-16 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-card-foreground">💡 HackerRank</h3>
           <a
             href="https://www.hackerrank.com/profile/mdsohel46940"
@@ -53,7 +58,7 @@ function Connect() {
 
         {/* CodeChef */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-          <img src="/codecef.jpg" alt="CodeChef Logo" className="w-16 h-16 mx-auto mb-4" />
+          <img src={codechefImg} alt="CodeChef Logo" className="w-16 h-16 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-card-foreground">👨‍💻 CodeChef</h3>
           <a
             href="https://www.codechef.com/users/mdsohel123"
@@ -67,7 +72,7 @@ function Connect() {
 
         {/* LeetCode */}
         <div className="bg-card p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center">
-          <img src="/leetcode.png" alt="LeetCode Logo" className="w-16 h-16 mx-auto mb-4" />
+          <img src={leetcodeImg} alt="LeetCode Logo" className="w-16 h-16 mx-auto mb-4" />
           <h3 className="text-xl font-semibold text-card-foreground">🖥 LeetCode</h3>
           <a
             href="https://leetcode.com/u/mdsohel786/"

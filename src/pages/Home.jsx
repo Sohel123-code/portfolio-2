@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import profileImg from '../assets/s1.jpeg';
 
 function Home() {
   return (
@@ -60,7 +61,7 @@ function Home() {
           <div className="relative max-w-xs mx-auto">
             <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto mb-4 group">
               <img
-                src="/s1.jpeg"
+                src={profileImg}
                 alt="Sohel"
                 className="w-full h-full object-cover rounded-full border-4 border-primary/70 shadow-xl transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:shadow-2xl"
               />
