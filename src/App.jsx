@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import Home from './pages/Home.jsx';
 import About from './pages/About.jsx';
 import Projects from './pages/Projects.jsx';
@@ -52,6 +53,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
+      <SpeedInsights />
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm transition-shadow duration-300">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
           <Link to="/" className="text-xl font-bold tracking-tight">
